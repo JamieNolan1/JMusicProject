@@ -12,15 +12,17 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author jamie
+ * @author Jamie Nolan
  */
 public class JMusicGUI extends javax.swing.JFrame {
     
     private Stack<String> likedSongs;
     private Stack<String> IndieSongs;
     private Stack<String> OTAcoreSongs;
+    /*creates the stacks for the playlists*/
     
     private enum PlayListType {LIKED, INDIE, OTACORE}
+    /*respresents the three different playlists that PlayListType can be*/
     
    private PlayListType currentPlayListType;
    
@@ -35,20 +37,20 @@ public class JMusicGUI extends javax.swing.JFrame {
    public Stack<String> getOTAcoreSongs() {
        return OTAcoreSongs;
    }
-   
+  /*returns the needed playlists*/
+   /*creates a queue to hold the playlist songs*/
    private Queue<String> playlistQueue = new LinkedList<>();
    
+   /*adds the songs into the Playlist que*/
    private void addToPlaylistQueue(String songName) {
        playlistQueue.add(songName);
    }
    
-   private int likedIndex = 0;
-   private int indieIndex = 0;
-   private int otaIndex = 0;
-   
-   private boolean Repeat = false;
+  
    
    
+   
+   /*adds songs from one of the stacks to the playlist que*/
    private void addToPlaylistQueue(Stack<String> songStack) {
        while (!songStack.isEmpty()){
            String songName = songStack.pop();
@@ -56,13 +58,6 @@ public class JMusicGUI extends javax.swing.JFrame {
        }
    }
    
-  
-   
-   
-    
-    
-   
-
     /**
      * Creates new form JMusicGUI
      */
@@ -266,13 +261,50 @@ public class JMusicGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LikedPlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LikedPlaylistActionPerformed
-             currentPlayListType = PlayListType.LIKED;
-             JOptionPane.showMessageDialog(this, likedSongs);
+               int count = 3;
+               for(int i =0; i <count; i++){
+               /*Makes the Playlist repeast 3 times */
+                
+               currentPlayListType = PlayListType.LIKED;
+               /*makes the current playlist the program is looking at the LIKED playlist*/
+               int numberOfSongs = likedSongs.size();
+               /*declares a variable that represents hpw many somgs are in the playlist*/
+               
+               
+               StringBuilder messageBuilder = new StringBuilder();
+               /*enables stringbuilder*/
+               messageBuilder.append("liked Playlist\n\nNow Playing Playlist:\n");
+               for(String song: likedSongs){
+                   messageBuilder.append(song).append("\n");
+                   
+                   
+               }
+               messageBuilder.append("\nNumber of Songs: ").append(numberOfSongs);
+             JOptionPane.showMessageDialog(this, messageBuilder.toString());
+             /* makes a message that shows the user what play list they are in, what songs are in it, and how many songs are in the list*/
+               }
     }//GEN-LAST:event_LikedPlaylistActionPerformed
 
     private void OtaCorePlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OtaCorePlaylistActionPerformed
-             currentPlayListType = PlayListType.OTACORE;
-             JOptionPane.showMessageDialog(this, OTAcoreSongs);
+            int count = 3;
+            for(int i =0; i <count; i++){
+                /*Makes the Playlist repeast 3 times */
+        
+                currentPlayListType = PlayListType.OTACORE;
+                /*makes the current playlist the program is looking at the OTACORE playlist*/
+               int numberOfSongs = OTAcoreSongs.size();
+               
+               StringBuilder messageBuilder = new StringBuilder();
+               /*enables stringbuilder*/
+               messageBuilder.append("OTA core Playlist\n\nNow Playing Playlist:\n");
+               for(String song: OTAcoreSongs){
+                   messageBuilder.append(song).append("\n");
+                   
+               }
+               messageBuilder.append("\nNumber of Songs: ").append(numberOfSongs);
+             JOptionPane.showMessageDialog(this, messageBuilder.toString());
+             /* makes a message that shows the user what play list they are in, what songs are in it, and how many songs are in the list*/
+        }
     }//GEN-LAST:event_OtaCorePlaylistActionPerformed
 
     private void AddOTAcoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddOTAcoreActionPerformed
@@ -281,12 +313,28 @@ public class JMusicGUI extends javax.swing.JFrame {
             OTAcoreSongs.push(songName);
             JOptionPane.showMessageDialog(this,songName + " has been added to OTA core");
             addToPlaylist(songName,currentPlayListType);
-        
+        /*checks what the last added song to the LIKED playlist is, and then adds that to the OTA core playlist*/
         }
     }//GEN-LAST:event_AddOTAcoreActionPerformed
 
     private void SearchIndieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchIndieActionPerformed
-        // TODO add your handling code here:
+           String searchTerm = JOptionPane.showInputDialog("What song are you searching for?");
+    boolean found = false;
+    int position = 0;
+    for (String songName : IndieSongs) {
+        position++;
+        if (songName.equals(searchTerm)) {
+            found = true;
+            break;
+        }
+    }
+    
+    if (found) {
+        JOptionPane.showMessageDialog(this, searchTerm + " is in this playlist");
+    } else {
+        JOptionPane.showMessageDialog(this, searchTerm + " is not in this playlist");
+    }
+/*Creates a search query that asks the user what song they want to search for, then iterates over each value present in the INDIE playlist, and returns whether or not the searchterm is in the playlist*/
     }//GEN-LAST:event_SearchIndieActionPerformed
 
     private void DeleteOtaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteOtaActionPerformed
@@ -295,6 +343,7 @@ public class JMusicGUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,removedSong +" has been removed from Indie Playlist");
         } else{
             JOptionPane.showMessageDialog(this," Indie playlist is Empty");
+            /*checks what the newest value added to the OTA core playlist was, and deletes that value*/
         }
     }//GEN-LAST:event_DeleteOtaActionPerformed
 
@@ -307,7 +356,7 @@ public class JMusicGUI extends javax.swing.JFrame {
            addToPlaylist(songName,currentPlayListType);
        }else{
            JOptionPane.showMessageDialog(this, "please enter a song name");
-           
+         /*checks what the user inputted into the SongInput box, then adds that as te newest value to the LIKED playlist*/  
        }
     }//GEN-LAST:event_SongInputActionPerformed
 
@@ -317,12 +366,28 @@ public class JMusicGUI extends javax.swing.JFrame {
             IndieSongs.push(songName);
             JOptionPane.showMessageDialog(this,songName + " has been added to Indie");
             addToPlaylist(songName,currentPlayListType);
-        
+         /*checks what the last added song to the LIKED playlist is, and then adds that to the INDIE playlist*/
         }
     }//GEN-LAST:event_AddIndieActionPerformed
 
     private void SearchOtaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchOtaActionPerformed
-        // TODO add your handling code here:
+           String searchTerm = JOptionPane.showInputDialog("What song are you searching for?");
+    boolean found = false;
+    int position = 0;
+    for (String songName : OTAcoreSongs) {
+        position++;
+        if (songName.equals(searchTerm)) {
+            found = true;
+            break;
+        }
+    }
+    
+    if (found) {
+        JOptionPane.showMessageDialog(this, searchTerm + " is in this playlist");
+    } else {
+        JOptionPane.showMessageDialog(this, searchTerm + " is not in this playlist");
+    }
+/*Creates a search query that asks the user what song they want to search for, then iterates over each value present in the OTA core playlist, and returns whether or not the searchterm is in the playlist*/
     }//GEN-LAST:event_SearchOtaActionPerformed
 
     private void DeleteIndieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteIndieActionPerformed
@@ -331,16 +396,49 @@ public class JMusicGUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,removedSong +" has been removed from Indie Playlist");
         } else{
             JOptionPane.showMessageDialog(this," Indie playlist is Empty");
+            /*checks what the newest value added to the INDIE playlist was, and deletes that value*/
         }
     }//GEN-LAST:event_DeleteIndieActionPerformed
 
     private void IndiePlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IndiePlaylistActionPerformed
+               int count = 3;
+        for(int i =0; i <count; i++){
+            /*Makes the Playlist repeast 3 times */
                currentPlayListType = PlayListType.INDIE;
-             JOptionPane.showMessageDialog(this, IndieSongs);
+               /*makes the current playlist the program is looking at the INDIE playlist*/
+               int numberOfSongs = IndieSongs.size();
+               
+               StringBuilder messageBuilder = new StringBuilder();
+               /*enables stringbuilder*/
+               messageBuilder.append("Indie Playlist\n\nNow Playing Playlist:\n");
+               for(String song: IndieSongs){
+                   messageBuilder.append(song).append("\n");
+                   
+               }
+               messageBuilder.append("\nNumber of Songs: ").append(numberOfSongs);
+             JOptionPane.showMessageDialog(this, messageBuilder.toString());
+             /* makes a message that shows the user what play list they are in, what songs are in it, and how many songs are in the list*/
+        }
     }//GEN-LAST:event_IndiePlaylistActionPerformed
 
     private void SearchLikedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchLikedActionPerformed
-        // TODO add your handling code here:
+    String searchTerm = JOptionPane.showInputDialog("What song are you searching for?");
+    boolean found = false;
+    int position = 0;
+    for (String songName : likedSongs) {
+        position++;
+        if (songName.equals(searchTerm)) {
+            found = true;
+            break;
+        }
+    }
+    
+    if (found) {
+        JOptionPane.showMessageDialog(this, searchTerm + " is in this playlist");
+    } else {
+        JOptionPane.showMessageDialog(this, searchTerm + " is not in this playlist");
+    }
+/*Creates a search query that asks the user what song they want to search for, then iterates over each value present in the LIKED playlist, and returns whether or not the searchterm is in the playlist*/
     }//GEN-LAST:event_SearchLikedActionPerformed
 
     private void DeleteLikedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteLikedActionPerformed
@@ -349,10 +447,7 @@ public class JMusicGUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,removedSong +" has been removed from Liked Playlist");
         } else{
             JOptionPane.showMessageDialog(this," Liked playlist is Empty");
-            
-            
-            
-        
+           /*checks what the newest value added to the Liked playlist was, and deletes that value*/
     }
     }//GEN-LAST:event_DeleteLikedActionPerformed
 
@@ -364,6 +459,7 @@ public class JMusicGUI extends javax.swing.JFrame {
         case OTACORE:
             OTAcoreSongs.push(songName);
             break;
+            /*Decides which playlists will go to based on what the currentPlaylistType is*/
     }
 }
     /**
@@ -394,11 +490,7 @@ public class JMusicGUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new JMusicGUI().setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

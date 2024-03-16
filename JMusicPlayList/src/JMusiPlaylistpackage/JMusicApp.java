@@ -5,7 +5,7 @@
 package JMusiPlaylistpackage;
 /**
  *
- * @author jamie
+ * @author Jamie Nolan
  */
 public class JMusicApp {
     public static void main(String[] args){
