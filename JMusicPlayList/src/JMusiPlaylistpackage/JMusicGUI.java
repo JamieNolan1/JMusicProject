@@ -96,6 +96,8 @@ public class JMusicGUI extends javax.swing.JFrame {
         DeleteIndie = new javax.swing.JButton();
         IndiePlaylist = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        SearchLiked = new javax.swing.JButton();
+        DeleteLiked = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,21 +117,21 @@ public class JMusicGUI extends javax.swing.JFrame {
             }
         });
 
-        AddOTAcore.setText("add");
+        AddOTAcore.setText("add to OTA");
         AddOTAcore.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddOTAcoreActionPerformed(evt);
             }
         });
 
-        SearchIndie.setText("search");
+        SearchIndie.setText("search INDIE");
         SearchIndie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SearchIndieActionPerformed(evt);
             }
         });
 
-        DeleteOta.setText("delete");
+        DeleteOta.setText("delete from OTA");
         DeleteOta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DeleteOtaActionPerformed(evt);
@@ -142,21 +144,21 @@ public class JMusicGUI extends javax.swing.JFrame {
             }
         });
 
-        AddIndie.setText("add");
+        AddIndie.setText("add to INDIE");
         AddIndie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddIndieActionPerformed(evt);
             }
         });
 
-        SearchOta.setText("search");
+        SearchOta.setText("search OTA");
         SearchOta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SearchOtaActionPerformed(evt);
             }
         });
 
-        DeleteIndie.setText("delete");
+        DeleteIndie.setText("delete from INDIE");
         DeleteIndie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DeleteIndieActionPerformed(evt);
@@ -172,52 +174,62 @@ public class JMusicGUI extends javax.swing.JFrame {
 
         jLabel2.setText("enter song here and press ENTER key");
 
+        SearchLiked.setText("search OTA");
+        SearchLiked.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchLikedActionPerformed(evt);
+            }
+        });
+
+        DeleteLiked.setText("delete from OTA");
+        DeleteLiked.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteLikedActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(LikedPlaylist)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(149, Short.MAX_VALUE)
-                        .addComponent(SearchOta)
-                        .addGap(18, 18, 18)
-                        .addComponent(DeleteOta)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(SearchIndie)
-                        .addGap(21, 21, 21)
-                        .addComponent(DeleteIndie)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(IndiePlaylist)
-                                .addGap(19, 19, 19))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(AddOTAcore, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(76, 76, 76)
-                                .addComponent(AddIndie)
-                                .addGap(39, 39, 39))))))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(159, 159, 159)
-                        .addComponent(jLabel1))
+                .addGap(159, 159, 159)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(144, 144, 144)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(OtaCorePlaylist)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(SongInput, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel2)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(SongInput, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 98, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(LikedPlaylist)
+                                .addGap(92, 92, 92)
+                                .addComponent(OtaCorePlaylist))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(DeleteLiked)
+                                    .addComponent(SearchLiked))
+                                .addGap(96, 96, 96)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(DeleteOta)
+                                    .addComponent(AddOTAcore)
+                                    .addComponent(SearchOta))))
+                        .addGap(88, 88, 88)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(IndiePlaylist)
+                            .addComponent(AddIndie)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(SearchIndie)
+                                    .addComponent(DeleteIndie))))))
+                .addGap(50, 50, 50))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -228,22 +240,26 @@ public class JMusicGUI extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SongInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                .addGap(79, 79, 79)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(OtaCorePlaylist)
                     .addComponent(IndiePlaylist)
+                    .addComponent(OtaCorePlaylist)
                     .addComponent(LikedPlaylist))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddIndie)
+                    .addComponent(AddOTAcore, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SearchLiked))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SearchIndie)
+                    .addComponent(SearchOta)
+                    .addComponent(DeleteLiked))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AddOTAcore, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AddIndie))
-                .addGap(13, 13, 13)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DeleteOta)
-                    .addComponent(SearchOta)
-                    .addComponent(SearchIndie)
-                    .addComponent(DeleteIndie))
-                .addGap(29, 29, 29))
+                    .addComponent(DeleteIndie)
+                    .addComponent(DeleteOta))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -260,7 +276,13 @@ public class JMusicGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_OtaCorePlaylistActionPerformed
 
     private void AddOTAcoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddOTAcoreActionPerformed
-        // TODO add your handling code here:
+        if (!likedSongs.isEmpty()){
+            String songName = likedSongs.peek();
+            OTAcoreSongs.push(songName);
+            JOptionPane.showMessageDialog(this,songName + " has been added to OTA core");
+            addToPlaylist(songName,currentPlayListType);
+        
+        }
     }//GEN-LAST:event_AddOTAcoreActionPerformed
 
     private void SearchIndieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchIndieActionPerformed
@@ -285,7 +307,13 @@ public class JMusicGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_SongInputActionPerformed
 
     private void AddIndieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddIndieActionPerformed
-        // TODO add your handling code here:
+        if (!likedSongs.isEmpty()){
+            String songName = likedSongs.peek();
+            IndieSongs.push(songName);
+            JOptionPane.showMessageDialog(this,songName + " has been added to Indie");
+            addToPlaylist(songName,currentPlayListType);
+        
+        }
     }//GEN-LAST:event_AddIndieActionPerformed
 
     private void SearchOtaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchOtaActionPerformed
@@ -300,6 +328,14 @@ public class JMusicGUI extends javax.swing.JFrame {
                currentPlayListType = PlayListType.INDIE;
              JOptionPane.showMessageDialog(this, IndieSongs);
     }//GEN-LAST:event_IndiePlaylistActionPerformed
+
+    private void SearchLikedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchLikedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchLikedActionPerformed
+
+    private void DeleteLikedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteLikedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteLikedActionPerformed
 
     private void addToPlaylist(String songName, PlayListType currentPlaylistType) {
     switch (currentPlaylistType) {
@@ -350,11 +386,13 @@ public class JMusicGUI extends javax.swing.JFrame {
     private javax.swing.JButton AddIndie;
     private javax.swing.JButton AddOTAcore;
     private javax.swing.JButton DeleteIndie;
+    private javax.swing.JButton DeleteLiked;
     private javax.swing.JButton DeleteOta;
     private javax.swing.JButton IndiePlaylist;
     private javax.swing.JButton LikedPlaylist;
     private javax.swing.JButton OtaCorePlaylist;
     private javax.swing.JButton SearchIndie;
+    private javax.swing.JButton SearchLiked;
     private javax.swing.JButton SearchOta;
     private javax.swing.JTextField SongInput;
     private javax.swing.JLabel jLabel1;

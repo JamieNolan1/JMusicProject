@@ -23,63 +23,57 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
           <Group type="102" alignment="1" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                      <Component id="LikedPlaylist" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="SongInput" min="-2" pref="199" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="149" max="32767" attributes="0"/>
-                      <Component id="SearchOta" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="DeleteOta" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="SearchIndie" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                      <Component id="DeleteIndie" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="0" pref="98" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="IndiePlaylist" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="LikedPlaylist" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+                              <Component id="OtaCorePlaylist" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="AddOTAcore" min="-2" pref="87" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                              <Component id="AddIndie" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="DeleteLiked" min="-2" max="-2" attributes="0"/>
+                                  <Component id="SearchLiked" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="DeleteOta" min="-2" max="-2" attributes="0"/>
+                                  <Component id="AddOTAcore" min="-2" max="-2" attributes="0"/>
+                                  <Component id="SearchOta" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="IndiePlaylist" min="-2" max="-2" attributes="0"/>
+                          <Component id="AddIndie" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="SearchIndie" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DeleteIndie" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
               </Group>
-          </Group>
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="OtaCorePlaylist" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="SongInput" min="-2" pref="199" max="-2" attributes="0"/>
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -92,25 +86,30 @@
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="SongInput" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="115" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="OtaCorePlaylist" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="IndiePlaylist" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="OtaCorePlaylist" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="LikedPlaylist" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="AddIndie" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="AddOTAcore" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="SearchLiked" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="SearchIndie" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="SearchOta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="DeleteLiked" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="AddOTAcore" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                  <Component id="AddIndie" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="DeleteOta" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="SearchOta" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="SearchIndie" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="DeleteIndie" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="DeleteOta" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <EmptySpace pref="19" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -139,7 +138,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="AddOTAcore">
       <Properties>
-        <Property name="text" type="java.lang.String" value="add"/>
+        <Property name="text" type="java.lang.String" value="add to OTA"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddOTAcoreActionPerformed"/>
@@ -147,7 +146,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="SearchIndie">
       <Properties>
-        <Property name="text" type="java.lang.String" value="search"/>
+        <Property name="text" type="java.lang.String" value="search INDIE"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchIndieActionPerformed"/>
@@ -155,7 +154,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="DeleteOta">
       <Properties>
-        <Property name="text" type="java.lang.String" value="delete"/>
+        <Property name="text" type="java.lang.String" value="delete from OTA"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteOtaActionPerformed"/>
@@ -168,7 +167,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="AddIndie">
       <Properties>
-        <Property name="text" type="java.lang.String" value="add"/>
+        <Property name="text" type="java.lang.String" value="add to INDIE"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddIndieActionPerformed"/>
@@ -176,7 +175,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="SearchOta">
       <Properties>
-        <Property name="text" type="java.lang.String" value="search"/>
+        <Property name="text" type="java.lang.String" value="search OTA"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchOtaActionPerformed"/>
@@ -184,7 +183,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="DeleteIndie">
       <Properties>
-        <Property name="text" type="java.lang.String" value="delete"/>
+        <Property name="text" type="java.lang.String" value="delete from INDIE"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteIndieActionPerformed"/>
@@ -202,6 +201,22 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="enter song here and press ENTER key"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="SearchLiked">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="search OTA"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchLikedActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="DeleteLiked">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="delete from OTA"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteLikedActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
