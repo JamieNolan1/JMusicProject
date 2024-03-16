@@ -204,7 +204,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="SearchLiked">
       <Properties>
-        <Property name="text" type="java.lang.String" value="search OTA"/>
+        <Property name="text" type="java.lang.String" value="search Liked"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchLikedActionPerformed"/>
@@ -212,7 +212,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="DeleteLiked">
       <Properties>
-        <Property name="text" type="java.lang.String" value="delete from OTA"/>
+        <Property name="text" type="java.lang.String" value="delete from Liked"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteLikedActionPerformed"/>

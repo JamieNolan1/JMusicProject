@@ -174,14 +174,14 @@ public class JMusicGUI extends javax.swing.JFrame {
 
         jLabel2.setText("enter song here and press ENTER key");
 
-        SearchLiked.setText("search OTA");
+        SearchLiked.setText("search Liked");
         SearchLiked.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SearchLikedActionPerformed(evt);
             }
         });
 
-        DeleteLiked.setText("delete from OTA");
+        DeleteLiked.setText("delete from Liked");
         DeleteLiked.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DeleteLikedActionPerformed(evt);
@@ -290,7 +290,12 @@ public class JMusicGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_SearchIndieActionPerformed
 
     private void DeleteOtaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteOtaActionPerformed
-        // TODO add your handling code here:
+        if (!OTAcoreSongs.isEmpty()) {
+            String removedSong = OTAcoreSongs.pop();
+            JOptionPane.showMessageDialog(this,removedSong +" has been removed from Indie Playlist");
+        } else{
+            JOptionPane.showMessageDialog(this," Indie playlist is Empty");
+        }
     }//GEN-LAST:event_DeleteOtaActionPerformed
 
     private void SongInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SongInputActionPerformed
@@ -301,7 +306,7 @@ public class JMusicGUI extends javax.swing.JFrame {
            getLikedSongs();
            addToPlaylist(songName,currentPlayListType);
        }else{
-           javax.swing.JOptionPane.showMessageDialog(this, "please enter a song name");
+           JOptionPane.showMessageDialog(this, "please enter a song name");
            
        }
     }//GEN-LAST:event_SongInputActionPerformed
@@ -321,7 +326,12 @@ public class JMusicGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_SearchOtaActionPerformed
 
     private void DeleteIndieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteIndieActionPerformed
-        // TODO add your handling code here:
+        if (!IndieSongs.isEmpty()) {
+            String removedSong = IndieSongs.pop();
+            JOptionPane.showMessageDialog(this,removedSong +" has been removed from Indie Playlist");
+        } else{
+            JOptionPane.showMessageDialog(this," Indie playlist is Empty");
+        }
     }//GEN-LAST:event_DeleteIndieActionPerformed
 
     private void IndiePlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IndiePlaylistActionPerformed
@@ -334,7 +344,16 @@ public class JMusicGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_SearchLikedActionPerformed
 
     private void DeleteLikedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteLikedActionPerformed
-        // TODO add your handling code here:
+        if (!likedSongs.isEmpty()) {
+            String removedSong = likedSongs.pop();
+            JOptionPane.showMessageDialog(this,removedSong +" has been removed from Liked Playlist");
+        } else{
+            JOptionPane.showMessageDialog(this," Liked playlist is Empty");
+            
+            
+            
+        
+    }
     }//GEN-LAST:event_DeleteLikedActionPerformed
 
     private void addToPlaylist(String songName, PlayListType currentPlaylistType) {
